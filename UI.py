@@ -1,6 +1,6 @@
 from tkinter import *
 
-class create_canvas(Tk):
+class create_UI(Tk):
 
     def __init__(self):
 
@@ -48,8 +48,9 @@ class create_canvas(Tk):
 
     def Enter(self):
         print(self.C_min.get())
+        print(self.C_max.get())
+        print(self.Iterations.get())
+        print(self.Scale_value.get())
+        print(complex(self.Z_value.get()))
 
-
-
-w = create_canvas()
-w.mainloop()
+UI = create_UI()
