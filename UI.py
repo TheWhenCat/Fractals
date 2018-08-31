@@ -10,16 +10,6 @@ class create_UI(Tk):
         self.Title = Label(self, text = "Fractal Renderer")
         self.Title.grid(row = 0, column = 0)
 
-        #C
-        self.C_min_label = Label(self, text = "C Min Value")
-        self.C_min = Entry(self)
-        self.C_max_label = Label(self, text="C Max Value")
-        self.C_max = Entry(self)
-        self.C_min_label.grid(row=1, column = 0)
-        self.C_min.grid(row=1, column= 1)
-        self.C_max_label.grid(row=2, column=0)
-        self.C_max.grid(row=2, column=1)
-
         #Iterations
         self.Iter_label = Label(self, text = "Iterations")
         self.Iterations = Entry(self)
@@ -35,6 +25,16 @@ class create_UI(Tk):
         #Scale
         self.Scale_label = Label(self, text = "Scale")
         self.Scale_value = Entry(self)
+        self.Scale_label.grid(row=5, column=0)
+        self.Scale_value.grid(row=5, column=1)
+
+        #Offsets
+        self.x_offset_label = Label(self, text="X-Offset")
+        self.x_offset = Entry(self)
+        self.y_offset_label = Label(self, text="Y-Offset")
+        self.y_offset = Entry(self)
+        self.Scale_label.grid(row=5, column=0)
+        self.Scale_value.grid(row=5, column=1)
         self.Scale_label.grid(row=5, column=0)
         self.Scale_value.grid(row=5, column=1)
 
@@ -57,20 +57,6 @@ class create_UI(Tk):
         print("=" * 100)
         print("Fractal Information:")
 
-        if len(self.C_min.get()) == 0:
-            print("You have entered no value for the Min, the default is -10")
-            self.C_min = -10
-        elif len(self.C_min.get()) > 0:
-            self.C_min = (self.C_min.get())
-            print("C Min: {}".format(self.C_min))
-
-        if len(self.C_max.get()) == 0:
-            print("You have entered no value for the Max, the default is 10")
-            self.C_max = 10
-        elif len(self.C_max.get()) > 0:
-            self.C_max = int(self.C_max.get())
-            print("C Max: {}".format(self.C_max))
-
         if len(self.Iterations.get()) == 0:
             print("You have entered no value for the Iterations, the default is 10")
             self.Iter = 10
@@ -87,10 +73,10 @@ class create_UI(Tk):
 
         if len(self.Z_value.get()) == 0:
             print("You have entered no value for the Z, the default is 0")
-            self.Z = complex(0)
+            self.Z = int(2)
         elif len(self.Z_value.get()) > 0:
             try:
-                self.Z = complex(self.Z_value.get())
+                self.Z = int(self.Z_value.get())
                 print("Z: {}".format(self.Z))
             except:
                 raise ValueError("Please enter a complex number (0 + 4j)")
