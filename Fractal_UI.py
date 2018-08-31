@@ -27,12 +27,24 @@ class create_canvas(Tk):
         self.Iterations.grid(row = 3, column=1)
 
         #Z
-        self.Z_label = Label(self, text = "Enter a Z Value")
+        self.Z_label = Label(self, text = "Z")
         self.Z_value = Entry(self)
+        self.Z_label.grid(row = 4, column = 0)
+        self.Z_value.grid(row = 4, column = 1)
+
+        #Scale
+        self.Scale_label = Label(self, text = "Scale")
+        self.Scale_value = Entry(self)
+        self.Scale_label.grid(row=5, column=0)
+        self.Scale_value.grid(row=5, column=1)
 
         #Enter
         self.Get = Button(self, text = "Enter", command = self.Enter)
-        self.Get.grid(row = 4, column = 1)
+        self.Get.grid(row = 6, column = 1)
+
+        #Quit
+        self.Quit = Button(self, text = "Quit", command = quit)
+        self.Quit.grid(row = 6, column = 0)
 
     def Enter(self):
         print(self.C_min.get())
