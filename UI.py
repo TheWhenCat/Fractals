@@ -33,24 +33,24 @@ class create_UI(Tk):
         self.x_offset = Entry(self)
         self.y_offset_label = Label(self, text="Y-Offset")
         self.y_offset = Entry(self)
-        self.Scale_label.grid(row=5, column=0)
-        self.Scale_value.grid(row=5, column=1)
-        self.Scale_label.grid(row=5, column=0)
-        self.Scale_value.grid(row=5, column=1)
+        self.x_offset_label.grid(row=6, column=0)
+        self.x_offset.grid(row=6, column=1)
+        self.y_offset_label.grid(row=7, column=0)
+        self.y_offset.grid(row=7, column=1)
 
         #Window
         self.Window_label = Label(self, text = "Window")
         self.Win_value = Entry(self)
-        self.Window_label.grid(row = 6, column = 0)
-        self.Win_value.grid(row = 6, column = 1)
+        self.Window_label.grid(row = 8, column = 0)
+        self.Win_value.grid(row = 8, column = 1)
 
         #Enter
         self.Get = Button(self, text = "Enter", command = self.Enter)
-        self.Get.grid(row = 7, column = 1)
+        self.Get.grid(row = 9, column = 1)
 
         #Quit
         self.Quit = Button(self, text = "Quit", command = quit)
-        self.Quit.grid(row = 7, column = 0)
+        self.Quit.grid(row = 9, column = 0)
 
     def Enter(self):
 
@@ -58,15 +58,15 @@ class create_UI(Tk):
         print("Fractal Information:")
 
         if len(self.Iterations.get()) == 0:
-            print("You have entered no value for the Iterations, the default is 10")
-            self.Iter = 10
+            print("You have entered no value for the Iterations, the default is 100")
+            self.Iter = 100
         elif len(self.Iterations.get()) > 0:
             self.Iter = int(self.Iterations.get())
             print("Iterations: {}".format(self.Iter))
 
         if len(self.Scale_value.get()) == 0:
-            print("You have entered no value for the Scale, the default is 100")
-            self.scale = 100
+            print("You have entered no value for the Scale, the default is 200")
+            self.scale = 200
         elif len(self.Scale_value.get()) > 0:
             self.scale = int(self.Scale_value.get())
             print("Scale: {}".format(self.scale))
@@ -87,6 +87,22 @@ class create_UI(Tk):
         elif len(self.Win_value.get()) > 0:
             self.winsize = int(self.Win_value.get())
             print("Window: {}".format(self.winsize))
+
+        if len(self.x_offset.get()) == 0:
+            print("You have entered no value for the X-Offset, the default is 0")
+            self.x_offset = 0
+        elif len(self.x_offset.get()) > 0:
+            self.x_offset = int(self.x_offset.get())
+            print("X-Offset: {}".format(self.x_offset))
+
+        if len(self.y_offset.get()) == 0:
+            print("You have entered no value for the Y-Offset, the default is 0")
+            self.y_offset = 0
+        elif len(self.y_offset.get()) > 0:
+            self.y_offset = int(self.y_offset.get())
+            print("Y-Offset: {}".format(self.y_offset))
+
+
 
         print("=" * 100)
 
