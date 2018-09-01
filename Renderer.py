@@ -13,14 +13,14 @@ for x1 in range(0, UI.winsize+1):
     for y1 in range(0, UI.winsize+1):
         y = ((y1-(UI.winsize/2)) / UI.scale) + (UI.y_offset/UI.scale)
 
-        z = (1-0)**UI.Z + complex(x, y)
+        z = UI.Z**2 + complex(x, y)
 
         iters = 0
         count = 0
 
         while count < UI.Iter:
 
-            z = (1-z)**UI.Z + complex(x, y)
+            z = z**2 + complex(x, y)
 
             count += 1
             iters += 1
@@ -34,10 +34,10 @@ for x1 in range(0, UI.winsize+1):
         factor = (iters/UI.Iter)**(1/2)
         intensity = int(round(UI.Iter*iters, 2))
 
-        if abs(z) > 4:
+        if abs(z) >= 3:
             Image.create_rectangle(x1, y1, x1 + 1, y1 + 1, fill="black",outline="#%02x%02x%02x" % (0,0,0))
 
-        if abs(z) > 2:
+        if 2 < abs(z) < 3:
             Image.create_rectangle(x1, y1, x1 + 1, y1 + 1, fill="black", outline="#%02x%02x%02x" % (intensity,intensity,intensity))
 
         if abs(z) <= 2:

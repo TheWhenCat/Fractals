@@ -73,7 +73,7 @@ class create_UI(Tk):
 
         if len(self.Z_value.get()) == 0:
             print("You have entered no value for the Z, the default is 0")
-            self.Z = int(2)
+            self.Z = int(0)
         elif len(self.Z_value.get()) > 0:
             try:
                 self.Z = int(self.Z_value.get())
