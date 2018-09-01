@@ -65,8 +65,8 @@ class create_UI(Tk):
             print("Iterations: {}".format(self.Iter))
 
         if len(self.Scale_value.get()) == 0:
-            print("You have entered no value for the Scale, the default is 200")
-            self.scale = 200
+            print("You have entered no value for the Scale, the default is 100")
+            self.scale = 100
         elif len(self.Scale_value.get()) > 0:
             self.scale = int(self.Scale_value.get())
             print("Scale: {}".format(self.scale))
@@ -92,14 +92,14 @@ class create_UI(Tk):
             print("You have entered no value for the X-Offset, the default is 0")
             self.x_offset = 0
         elif len(self.x_offset.get()) > 0:
-            self.x_offset = int(self.x_offset.get())
+            self.x_offset = float(self.x_offset.get())
             print("X-Offset: {}".format(self.x_offset))
 
         if len(self.y_offset.get()) == 0:
             print("You have entered no value for the Y-Offset, the default is 0")
             self.y_offset = 0
         elif len(self.y_offset.get()) > 0:
-            self.y_offset = int(self.y_offset.get())
+            self.y_offset = float(self.y_offset.get())
             print("Y-Offset: {}".format(self.y_offset))
 
 
